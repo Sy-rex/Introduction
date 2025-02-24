@@ -31,8 +31,10 @@ public class FirstStep {
     }
 
     public int sum(int[] array){
+        if (array == null) {
+            throw new IllegalArgumentException("null");
+        }
         int sum = 0;
-
         for (int i : array) {
             sum += i;
         }
@@ -41,8 +43,10 @@ public class FirstStep {
     }
 
     public int mul(int[] array){
+        if (array == null) {
+            throw new IllegalArgumentException("null");
+        }
         int mul = 1;
-
         for (int i : array) {
             if (i == 0) {
                 mul = 0;
@@ -55,8 +59,10 @@ public class FirstStep {
     }
 
     public int min(int[] array){
+        if (array == null) {
+            throw new IllegalArgumentException("null");
+        }
         int min = Integer.MAX_VALUE;
-
         for (int i : array) {
             if (i < min) min = i;
         }
@@ -65,8 +71,10 @@ public class FirstStep {
     }
 
     public int max(int[] array){
+        if (array == null) {
+            throw new IllegalArgumentException("null");
+        }
         int max = Integer.MIN_VALUE;
-
         for (int i : array) {
             if (i > max) max = i;
         }
@@ -75,8 +83,10 @@ public class FirstStep {
     }
 
     public double average(int[] array){
+        if (array == null) {
+            throw new IllegalArgumentException("null");
+        }
         double average = 0;
-
         for (int i = 0; i < array.length; i++) {
             average += array[i];
         }
@@ -85,8 +95,10 @@ public class FirstStep {
     }
 
     public boolean isSortedDescendant(int[] array){
+        if (array == null) {
+            throw new IllegalArgumentException("null");
+        }
         boolean sorted = true;
-
         for (int i = 1; i < array.length; i++) {
             if (array[i] > array[i - 1]) {
                 sorted = false;
@@ -98,13 +110,18 @@ public class FirstStep {
     }
 
     public void cube(int[]array){
+        if (array == null) {
+            throw new IllegalArgumentException("null");
+        }
         for (int i : array) {
             i*=i*i;
-            System.out.println(i);
         }
     }
 
     public boolean find(int[]array, int value){
+        if (array == null) {
+            throw new IllegalArgumentException("null");
+        }
         for(int i : array){
             if(i == value) return true;
         }
@@ -113,6 +130,9 @@ public class FirstStep {
     }
 
     public void reverse(int[]array){
+        if (array == null) {
+            throw new IllegalArgumentException("null");
+        }
         int left = 0;
         int right = array.length - 1;
 
@@ -126,6 +146,9 @@ public class FirstStep {
     }
 
     public boolean isPalindrome(int[]array){
+        if (array == null) {
+            throw new IllegalArgumentException("null");
+        }
         int left = 0;
         int right = array.length - 1;
 
@@ -142,6 +165,9 @@ public class FirstStep {
     }
 
     public int sum(int[][] matrix){
+        if (matrix == null) {
+            throw new IllegalArgumentException("null");
+        }
         int sum = 0;
 
         for (int i = 0; i < matrix.length; i++) {
@@ -154,11 +180,14 @@ public class FirstStep {
     }
 
     public int max(int[][] matrix){
+        if (matrix == null) {
+            throw new IllegalArgumentException("null");
+        }
         int max = Integer.MIN_VALUE;
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                max = Math.max(max, matrix[i][j]);
+                if(matrix[i][j] > max) max = matrix[i][j];
             }
         }
 
@@ -166,18 +195,22 @@ public class FirstStep {
     }
 
     public int diagonalMax(int[][] matrix){
+        if (matrix == null) {
+            throw new IllegalArgumentException("null");
+        }
         int max = Integer.MIN_VALUE;
 
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                max = Math.max(max, matrix[i][j]);
-            }
+            if(matrix[i][i] > max) max = matrix[i][i];
         }
 
         return max;
     }
 
     public boolean isSortedDescendant(int[][] matrix){
+        if (matrix == null) {
+            throw new IllegalArgumentException("null");
+        }
         for (int i = 0; i < matrix.length; i++) {
             if(!isSortedDescendant(matrix[i])) return false;
         }
