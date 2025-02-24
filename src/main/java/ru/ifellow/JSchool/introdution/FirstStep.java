@@ -100,7 +100,7 @@ public class FirstStep {
         }
         boolean sorted = true;
         for (int i = 1; i < array.length; i++) {
-            if (array[i] > array[i - 1]) {
+            if (array[i] <= array[i - 1]) {
                 sorted = false;
                 break;
             }
